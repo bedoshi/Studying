@@ -1,5 +1,6 @@
 package com.example.SampleAPI.controller;
 
+import com.example.SampleAPI.model.Person;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,6 +31,18 @@ public class SampleAPIController {
         JSONObject jsonObj = new JSONObject(param);
 
         return jsonObj.toString();
+    }
+
+    @RequestMapping(value = "/person_obj")
+    public Person returnPersonObj() {
+
+        Person person = new Person();
+        person.setAge(10);
+        person.setName("yamada taro");
+        person.setJob("front-end engineer");
+        person.setSex("male");
+
+        return person;
     }
 
 }
