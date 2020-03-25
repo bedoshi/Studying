@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api")
-public class SampleAPI {
+public class SampleAPIController {
 
     @RequestMapping(value = "/index")
     public String index() {
