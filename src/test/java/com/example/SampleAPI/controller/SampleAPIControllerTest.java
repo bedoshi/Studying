@@ -24,12 +24,6 @@ public class SampleAPIControllerTest {
     MockMvc mockMvc;
 
     @Test
-    public void indexTest() {
-        SampleAPIController controller = new SampleAPIController();
-        Assert.assertEquals("hello world", controller.index());
-    }
-
-    @Test
     public void canAccessToIndexTest() {
 
         mockMvc = MockMvcBuilders.standaloneSetup(target).build();
