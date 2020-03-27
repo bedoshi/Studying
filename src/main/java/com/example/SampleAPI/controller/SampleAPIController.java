@@ -1,12 +1,13 @@
 package com.example.SampleAPI.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import com.example.SampleAPI.model.Person;
 import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/api")
@@ -42,6 +43,13 @@ public class SampleAPIController {
         person.setJob("front-end engineer");
         person.setSex("male");
 
+        Person father = new Person("yamada jiro", 40, "male", "server side engineer");
+        List<Person> fathersFamily = new ArrayList<>();
+        father.setFamily(fathersFamily);
+        List<Person> family = new ArrayList<>();
+        family.add(father);
+
+        person.setFamily(family);
         return person;
     }
 
