@@ -20,14 +20,14 @@ public class SampleAPIController {
 
     @RequestMapping(value = "/person")
     public String returnPersonJson() {
-        return "{\"person\" : {\"name\" : \"yamada taro\", \"age\" : 20 }}";
+        return "{\"person\":{\"name\":\"yamada taro\",\"age\":20}}";
     }
 
     @RequestMapping(value = "/person_json")
     public String returnPersonJson2() {
         Map<String,String> param = new HashMap<>();
-        param.put("年齢", "20");
-        param.put("性別", "男");
+        param.put("age", "20");
+        param.put("sex", "man");
 
         JSONObject jsonObj = new JSONObject(param);
 
