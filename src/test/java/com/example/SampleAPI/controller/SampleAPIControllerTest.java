@@ -1,6 +1,7 @@
 package com.example.SampleAPI.controller;
 
-import org.junit.Assert;
+import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +24,13 @@ public class SampleAPIControllerTest {
 
     MockMvc mockMvc;
 
+    @Before
+    public void setup() {
+        mockMvc = MockMvcBuilders.standaloneSetup(target).build();
+    }
+
     @Test
     public void canAccessToIndexTest() {
-
-        mockMvc = MockMvcBuilders.standaloneSetup(target).build();
         try {
             mockMvc.perform(get("/api/index"))
             .andExpect(status().isOk())
@@ -35,6 +39,5 @@ public class SampleAPIControllerTest {
             e.printStackTrace();
             fail();
         }
-
     }
 }
