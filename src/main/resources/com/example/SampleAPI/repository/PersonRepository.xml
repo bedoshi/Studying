@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper>
+<mapper namespace="com.example.SampleAPI.repository.PersonRepository">
     <select id="selectPersonWithName" resultType="com.example.SampleAPI.model.Person">
         select * from person where name = #{name}
     </select>
