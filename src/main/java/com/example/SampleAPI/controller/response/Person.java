@@ -1,11 +1,12 @@
 package com.example.SampleAPI.controller.response;
 
-import java.util.List;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+import java.util.List;
+
+@Data
 public class Person {
     private String name;
     private int age;
