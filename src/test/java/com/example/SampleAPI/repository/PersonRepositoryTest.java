@@ -33,7 +33,6 @@ import java.util.List;
 @SpringBootTest
 @TestPropertySource(locations = "/application.yml")
 @DbUnitConfiguration(dataSetLoader = CsvDataSetLoader.class)
-
 public class PersonRepositoryTest {
 
     @Autowired
@@ -41,23 +40,25 @@ public class PersonRepositoryTest {
 
     @Test
     @Transactional
+    @DatabaseSetup(value = "/dbunit/person.csv")
     public void insertPersonTest() {
         Person person = new Person();
         person.setName("yamada");
-        person.setAge(10);
+        person.setAge(18);
+        person.setSex("male");
+        person.setJob("front-end engineer");
 
         personRepository.insertPerson(person);
 
         List<Person> actualList = personRepository.selectPersonWithName("yamada");
-        Assert.assertEquals(actualList.size(), 1);
-        Person actual = actualList.stream()
-                .filter(x -> "yamada".equals(x.getName()))
-                .findFirst()
-                .orElse(null);
-        Assert.assertNotNull(actual);
+        Assert.assertEquals(4, actualList.size());
+        Assert.assertEquals(4, actualList.stream()
+                .filter(person::equals)
+                .count());
     }
 
     @Test
+    @Transactional
     @DatabaseSetup(value = "/dbunit/person.csv")
     public void selectPersonWithNameTest() {
         List<Person> actualList = personRepository.selectPersonWithName("yamada");
