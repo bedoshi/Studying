@@ -1,4 +1,4 @@
-package com.example.SampleAPI.model;
+package com.example.SampleAPI.controller.response;
 
 import java.util.List;
 import lombok.Getter;
