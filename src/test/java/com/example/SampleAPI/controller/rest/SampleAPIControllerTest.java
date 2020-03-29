@@ -39,7 +39,7 @@ public class SampleAPIControllerTest {
     @Test
     public void canAccessToIndexTest() {
         try {
-            mockMvc.perform(get("/api/index"))
+            mockMvc.perform(get("/api/static/index"))
                     .andExpect(status().isOk())
                     .andExpect(content().string("hello world"));
         } catch (Exception e) {
@@ -51,7 +51,7 @@ public class SampleAPIControllerTest {
     @Test
     public void canAccessToPersonTest() {
         try {
-            mockMvc.perform(get("/api/person"))
+            mockMvc.perform(get("/api/static/person"))
                     .andExpect(status().isOk())
                     .andExpect(content().string("{\"person\":{\"name\":\"yamada taro\",\"age\":20}}"));
         } catch (Exception e) {
@@ -69,7 +69,7 @@ public class SampleAPIControllerTest {
 
             JSONObject jsonObj = new JSONObject(param);
 
-            mockMvc.perform(get("/api/person_json"))
+            mockMvc.perform(get("/api/static/person_json"))
                     .andExpect(status().isOk())
                     .andExpect(content().json(jsonObj.toString()));
         } catch (Exception e) {
@@ -97,7 +97,7 @@ public class SampleAPIControllerTest {
 
         try {
             String expectedJson = mapper.writeValueAsString(person);
-            mockMvc.perform(get("/api/person_obj"))
+            mockMvc.perform(get("/api/static/person_obj"))
                     .andExpect(status().isOk())
                     .andExpect(content().json(expectedJson));
         } catch (Exception e) {

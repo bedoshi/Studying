@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  * This controller class is sample how RestController returns response.
  */
 @RestController
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/static")
 public class SampleAPIController {
 
     @RequestMapping(value = "/index")
