@@ -4,6 +4,7 @@ import com.example.SampleAPI.SampleApiApplication;
 import com.example.SampleAPI.model.Person;
 import com.example.SampleAPI.testlib.CsvDataSetLoader;
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
+import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.DbUnitConfiguration;
 import org.junit.Assert;
 import org.junit.Test;
@@ -32,13 +33,14 @@ import java.util.List;
 @SpringBootTest
 @TestPropertySource(locations = "/application.yml")
 @DbUnitConfiguration(dataSetLoader = CsvDataSetLoader.class)
-@Transactional
+
 public class PersonRepositoryTest {
 
     @Autowired
     PersonRepository personRepository;
 
     @Test
+    @Transactional
     public void insertPersonTest() {
         Person person = new Person();
         person.setName("yamada");
@@ -53,5 +55,16 @@ public class PersonRepositoryTest {
                 .findFirst()
                 .orElse(null);
         Assert.assertNotNull(actual);
+    }
+
+    @Test
+    @DatabaseSetup(value = "/dbunit/person.csv")
+    public void selectPersonWithNameTest() {
+        List<Person> actualList = personRepository.selectPersonWithName("yamada");
+        Assert.assertEquals(actualList.size(), 3);
+
+        actualList = personRepository.selectPersonWithName("yamashita");
+        Assert.assertEquals(actualList.size(), 1);
+
     }
 }
