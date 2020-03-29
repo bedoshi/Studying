@@ -1,6 +1,6 @@
 package com.example.SampleAPI.controller.rest;
 
-import com.example.SampleAPI.controller.response.Person;
+import com.example.SampleAPI.model.Person;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;

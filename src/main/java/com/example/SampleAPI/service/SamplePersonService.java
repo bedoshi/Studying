@@ -1,6 +1,6 @@
 package com.example.SampleAPI.service;
 
-import com.example.SampleAPI.controller.response.Person;
+import com.example.SampleAPI.model.Person;
 import org.springframework.stereotype.Service;
 
 /**

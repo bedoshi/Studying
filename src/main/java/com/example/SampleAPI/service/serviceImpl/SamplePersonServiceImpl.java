@@ -1,6 +1,6 @@
 package com.example.SampleAPI.service.serviceImpl;
 
-import com.example.SampleAPI.controller.response.Person;
+import com.example.SampleAPI.model.Person;
 import com.example.SampleAPI.exception.PersonUnder18Exception;
 import com.example.SampleAPI.repository.PersonRepository;
 import com.example.SampleAPI.service.SamplePersonService;

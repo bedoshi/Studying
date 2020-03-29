@@ -1,8 +1,6 @@
-package com.example.SampleAPI.controller.response;
+package com.example.SampleAPI.model;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
