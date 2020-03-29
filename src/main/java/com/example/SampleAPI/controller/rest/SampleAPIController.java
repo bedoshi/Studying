@@ -1,4 +1,4 @@
-package com.example.SampleAPI.controller;
+package com.example.SampleAPI.controller.rest;
 
 import java.util.ArrayList;
 import java.util.HashMap;
