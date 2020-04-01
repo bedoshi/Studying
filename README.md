@@ -20,3 +20,9 @@ This Repository has some sample codes like below.
 2. Change directory to cloned one.
 3. Run `mvn install`. Run `brew install maven` or install maven if your env doesn't have maven.
 4. Run `mvn spring-boot:run`
+
+
+
+## This is just a memo for me 
+- only Mybatis, I can't use `@Column` because this annotation is prepared by JPA.
+- Not using JPA, DTO class member needs to be written snake case in case with column name is written by that case.
