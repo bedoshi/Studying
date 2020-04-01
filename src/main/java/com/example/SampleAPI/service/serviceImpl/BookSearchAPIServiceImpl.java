@@ -15,16 +15,28 @@ public class BookSearchAPIServiceImpl implements BookSearchAPIService {
 
     // TODO: need to implement
     private Book convertToBook(JSONObject result) {
-        return null;
+        Book book = new Book();
+        return book;
     }
 
     // TODO: need to implement
     private JSONObject getResultByName(String name) {
+        // 通信しそう
         return null;
     }
 
     @Override
     public Book searchByIsbn(String name) {
+        // なんか通信する
+        JSONObject result = getResultByIsbn(name);
+        // 取得した結果をbookにして返却する
+        return convertToBook(result);
+    }
+
+    // TODO: need to implement
+    private JSONObject getResultByIsbn(String name) {
+
+        // なんか通信する
         return null;
     }
 }
