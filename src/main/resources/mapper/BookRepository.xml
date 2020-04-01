@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.SampleAPI.repository.BookRepository">
+    <select id="selectAll" resultType="com.example.SampleAPI.model.Book">
+        select
+            *
+        from
+            book
+    </select>
+    <select id="selectByPrimaryKey" resultType="com.example.SampleAPI.model.Book">
+        select
+            *
+        from
+            book
+        where
+            book_id = #{book_id}
+    </select>
+    <insert id="insert">
+        insert into
+            book(
+                book_id,
+                book_name,
+                book_isbn
+            ) values (
+                #{book_id},
+                #{book_name},
+                #{book_isbn}
+            )
+    </insert>
+</mapper>
