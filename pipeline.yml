@@ -2,7 +2,7 @@ resources:
   - name: git-repo
     type: git
     source:
-      uri: https://github.com/nitram509/concourse-java-maven-test-prj.git
+      uri: https://github.com/bedoshi/Studying.git
       branch: master
   - name: time
     type: time
@@ -17,8 +17,6 @@ jobs:
       - get: git-repo
         trigger: true
       - get: time
-    # - task: maven-package
-    #   privileged: true
-    #   file: git-repo/pipeline/maven-package.yml
-    # - task: rename-file
-    #   file: git-repo/pipeline/rename-file.yml
+    - task: maven-package
+      privileged: true
+      file: git-repo/maven-package.yml
