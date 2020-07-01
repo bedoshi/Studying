@@ -4,12 +4,8 @@ resources:
   source:
     url: https://github.com/bedoshi/Studying.git
     branch: master
-
 jobs:
 - name: gradle-package
   public: true
   plan:
   - get: git-repo
-  # - task: gradle-package
-  #   privileged: true
-  #   file: maven-package.yml
