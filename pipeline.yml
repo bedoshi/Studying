@@ -5,6 +5,6 @@ resources:
       url: https://github.com/bedoshi/Studying.git
       branch: master
 jobs:
-- name: gradle-package
-  plan:
-  - get: git-repo
+  - name: gradle-package
+    plan:
+    - get: git-repo
