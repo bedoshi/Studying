@@ -14,5 +14,5 @@ jobs:
       trigger: true
     - task: gradle-package
       privileged: true
-      file: gradle-package.yml
+      file: maven-package.yml
 
