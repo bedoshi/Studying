@@ -1,0 +1,18 @@
+---
+resources:
+  - name: git-repo
+    type: git
+    source:
+      url: https://github.com/bedoshi/Studying.git
+      branch: master
+
+
+jobs:
+  - name: gradle-package
+    plan:
+    - get: git-repo
+      trigger: true
+    - task: gradle-package
+      privileged: true
+      file: gradle-package.yml
+
