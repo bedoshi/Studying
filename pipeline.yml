@@ -17,8 +17,8 @@ jobs:
       - get: git-repo
         trigger: true
       - get: time
-    - task: maven-package
-      privileged: true
-      file: git-repo/pipeline/maven-package.yml
-    - task: rename-file
-      file: git-repo/pipeline/rename-file.yml
+    # - task: maven-package
+    #   privileged: true
+    #   file: git-repo/pipeline/maven-package.yml
+    # - task: rename-file
+    #   file: git-repo/pipeline/rename-file.yml
