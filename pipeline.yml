@@ -1,4 +1,3 @@
----
 resources:
 - name: git-repo
   type: git
@@ -8,9 +7,9 @@ resources:
 
 jobs:
 - name: gradle-package
+  public: true
   plan:
   - get: git-repo
-    trigger: true
-  - task: gradle-package
-    privileged: true
-    file: maven-package.yml
+  # - task: gradle-package
+  #   privileged: true
+  #   file: maven-package.yml
